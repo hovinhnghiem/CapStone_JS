@@ -1,5 +1,5 @@
-import ProductServices from "../services/product-services.js"
-import Product from "../models/product.js";
+import ProductServices from "../../app/services/product-services.js";
+import Product from "../../app/models/product.js";
 const services = new ProductServices();
 const getEle = (id) => {
     return document.getElementById(id)
@@ -35,10 +35,14 @@ const renderListProduct = (data) => {
             <td>${i + 1}</td>
             <td>${product.name}</td>
             <td>${product.price}</td>
+            <td>${product.screen}</td>
+            <td>${product.blackCamera}</td>
+            <td>${product.frontCamera}</td>
             <td>
             <img src="./../../assets/img/${product.image}" width="50" />
             </td>
-            <td>${product.description}</td>
+            <td>${product.desc}</td>
+            <td>${product.type}</td>
             <td class="btn btn-info" data-toggle="modal" data-target="#myModal" onclick="onEditProduct(${product.id})">Edit</td>
             <td class="btn btn-danger" onclick="onDeleteProduct(${product.id})">Delete</td>
             
@@ -75,11 +79,15 @@ getListProduct();
 const getValue = () => {
     const name = getEle("TenSP").value;
     const price = getEle("GiaSP").value * 1;
+    const screen = getEle("screen").value;
+    const blackCamera = getEle("CameraSau").value;
+    const frontCamera = getEle("CameraTruoc").value;
     const image = getEle("HinhSP").value;
     const desc = getEle("MoTa").value;
+    const type = getEle("brand").value;
 
     //tao object tu class product
-    const product = new Product("", name, price, image, desc);
+    const product = new Product("", name, price, screen, blackCamera, frontCamera, image, desc, type);
     return product;
 }
 
@@ -133,8 +141,12 @@ const onEditProduct = (id) => {
             // Dom toi the input va show value ra
             getEle("TenSP").value = product.name;
             getEle("GiaSP").value = product.price;
+            getEle("screen").value = product.screen;
+            getEle("CameraSau").value = product.blackCamera;
+            getEle("CameraTruoc").value = product.frontCamera;
             getEle("HinhSP").value = product.image;
-            getEle("MoTa").value = product.description;
+            getEle("MoTa").value = product.desc;
+            getEle("brand").value = product.type;
         })
         .catch((error) => {
             console.log(error);
