@@ -6,21 +6,21 @@ class ProductServices {
             - Reject: Thất bại
          */
         const promise = axios({
-            url: "https://683dad13199a0039e9e670ab.mockapi.io/api/CapStone",
+            url: "https://683dad13199a0039e9e670ab.mockapi.io/api/Product",
             merthod: "GET"
         })
         return promise;
     }
     deleteProductApi(id) {
         const promise = axios({
-            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/CapStone/${id}`,
+            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/Product/${id}`,
             method: "DELETE"
         });
         return promise;
     }
     addProductApi(product) {
         const promise = axios({
-            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/CapStone`,
+            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/Product`,
             method: "POST",
             data: product,
         });
@@ -28,7 +28,7 @@ class ProductServices {
     }
     getProductById(id) {
         const promise = axios({
-            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/CapStone/${id}`,
+            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/Product/${id}`,
             method: "GET",
 
         });
@@ -37,7 +37,7 @@ class ProductServices {
 
     updateProductApi(product) {
         const promise = axios({
-            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/CapStone/${product.id}`,
+            url: `https://683dad13199a0039e9e670ab.mockapi.io/api/Product/${product.id}`,
             method: "PUT",
             data: product,
         });
