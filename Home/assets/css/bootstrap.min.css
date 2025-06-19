@@ -8435,9 +8435,7 @@ fieldset:disabled .btn {
     background-color: #fff !important
 }
 
-.bg-white {
-    background-color: #fff !important
-}
+
 
 .bg-transparent {
     background-color: rgba(0, 0, 0, 0) !important
@@ -12597,4 +12595,7 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important
     }
+    .cart-table .btn-pay {
+    background-color: #e65c00 !important;
+}
 }

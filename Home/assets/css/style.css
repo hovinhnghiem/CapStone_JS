@@ -528,3 +528,211 @@
 .text-carousel{
     color: rgb(25, 186, 226);
 }
+
+/**
+ * Hiển thi sản phẩm
+ */
+
+ .product-container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng nếu không đủ chỗ */
+  justify-content: space-between; /* Phân bố các sản phẩm đều trên hàng ngang */
+  gap: 20px; /* Khoảng cách giữa các sản phẩm */
+  margin-top: 20px;
+}
+
+.product-item {
+  width: 22%; /* Mỗi sản phẩm chiếm 1/4 chiều rộng */
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-item p {
+  font-size: 14px;
+  color: #888;
+}
+
+.product-item .price {
+  font-weight: bold;
+  color: #ff6f00;
+}
+
+.product-item .btn-buy {
+  background-color: #ff6f00;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.product-item .btn-buy:hover {
+  background-color: #e65c00;
+}
+
+/* Modal Giỏ hàng */
+.cart-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 80%;
+    max-width: 900px;
+    display: none;
+    overflow-y: auto; /* Cho phép cuộn nếu giỏ hàng quá nhiều sản phẩm */
+}
+
+/* Tiêu đề Modal Giỏ hàng */
+.cart-modal h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Table giỏ hàng */
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#cart-table thead {
+    background-color: #f8f8f8;
+}
+
+#cart-table th {
+    padding: 15px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    background-color: #f1f1f1;
+}
+
+#cart-table td .quantity-container {
+    display: flex;
+    justify-content: center; /* Căn giữa các phần tử trong dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+#cart-count {
+    color:#e65c00
+}
+
+/* Hình ảnh sản phẩm trong giỏ hàng */
+#cart-table td img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Cột tổng giá và số lượng */
+#cart-table td button {
+    background-color: #ff6f00;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart-table td button:hover {
+    background-color: #e65c00;
+}
+
+/* Định dạng số lượng */
+#cart-table td button:focus {
+    outline: none;
+}
+
+/* Hiệu ứng hover trên các dòng sản phẩm */
+#cart-table tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+/* Hiển thị nút đóng giỏ hàng */
+button {
+    background-color: #4CAF50; /* Màu xanh lá cây */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #45a049; /* Màu khi hover */
+}
+
+/* Cột Số Lượng */
+#cart-table td .quantity-container {
+    display: flex;
+    justify-content: center; /* Căn giữa các phần tử trong dòng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Các nút +, -, số lượng */
+#cart-table td .quantity-container button {
+    background-color: #ff6f00;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cart-table td .quantity-container button:hover {
+    background-color: #e65c00;
+}
+
+/* Số lượng */
+#cart-table td .quantity-container span {
+    margin: 0 10px; /* Khoảng cách giữa nút và số lượng */
+    font-size: 16px;
+    color: #333;
+}
+
+/* Cải thiện hiệu ứng hover của dòng sản phẩm */
+#cart-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.button-cart {
+    display: flex;
+    justify-content: flex-start;
+}
